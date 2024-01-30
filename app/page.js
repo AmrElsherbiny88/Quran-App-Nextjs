@@ -1,95 +1,52 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import { Container , Row , Col } from "reactstrap"
+import NavBar from "./Components/NavBar"
+import Image from "next/image"
+import hero from "../public/Heroo.png"
+import axios from 'axios';
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
-export default function Home() {
+export default async function Home() {
+  const response = await fetch("http://api.alquran.cloud/v1/quran/45");
+  const dataa = await response.json();
+  const surah = dataa.data.surahs
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+     <NavBar />
+ 
+     <Container className="text-center mt-5">
+       <Row>
+         <Col xl={6} md={6} lg={6} sm={6} className="text-center ">
+           <Image src={hero}/> 
+         </Col>
+ 
+         <Col xl={6} md={6} lg={6} sm={6} className="text-center mt-5">
+         <h1>موقع يوجد به القران الكريم كامل و سيتم اضافة المزيد في اقرب وقت ممكن</h1>
+         </Col>
+       </Row>
+     </Container>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+     <Container className="text-center mt-4">
+     <Row>
+        {
+          surah.map((sur)=>{
+            return (
+              <Col xl={4} md={4} lg={4} sm={4} className="mt-3 mb-2"> 
+              <Link className="surah" href= {`Quran/${sur.number}`}>
+                   <h2 >{sur.name} <FaArrowRight /></h2>
+              </Link>
+              </Col> 
+            )
+          })
+        }
+      
+      </Row>
+     </Container>
+    </>
+   )
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+  
 }
