@@ -62,7 +62,7 @@ const QuranSearch = () => {
           dir="auto"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder='ابحث هنا عن الصورة'
+          placeholder='ابحث هنا عن السورة'
         />
       
 
