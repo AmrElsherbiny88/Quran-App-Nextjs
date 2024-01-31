@@ -15,8 +15,8 @@ const QuranSearch = () => {
   useEffect(() => {
     const fetchSurahs = async () => {
       try {
-        const response = await fetch('https://api.alquran.cloud/v1/quran/45'
-       
+        const response = await fetch('https://api.alquran.cloud/v1/quran/45',
+        
         );
         const data = await response.json();
 
@@ -62,7 +62,7 @@ const QuranSearch = () => {
           dir="auto"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder='ابحث هنا عن السورة'
+          placeholder='ابحث هنا عن الصورة'
         />
       
 

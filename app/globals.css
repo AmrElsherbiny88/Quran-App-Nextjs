@@ -37,7 +37,7 @@ html
 }
 
 .ayah-text {
-  line-height: 56px;
+  line-height: 35px;
 }
 
 .ayah-no {
@@ -96,4 +96,8 @@ html
   border-bottom: solid white;
   border-radius: 20px;
   padding-bottom: 10px;
+}
+
+.audio {
+  width: 100%;
 }

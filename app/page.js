@@ -10,14 +10,14 @@ export default async function Home() {
     <>
      <NavBar />
  
-     <Container className="text-center mt-5">
+     <Container className="text-center mt-4">
        <Row>
          <Col xl={6} md={6} lg={6} sm={6} className="text-center ">
            <Image src={hero}/> 
          </Col>
  
          <Col xl={6} md={6} lg={6} sm={6} className="text-center mt-5">
-         <h1>موقع يوجد به القران الكريم كامل و سيتم اضافة المزيد في اقرب وقت ممكن</h1>
+         <h1 >موقع يوجد به القران الكريم كامل و يمكنك ايضا الاستماع اليه هنا و سيتم اضافة المزيد في اقرب وقت ممكن </h1>
          </Col>
          <Col xl={12} md={12} lg={12} sm={12} className="text-center mt-5">
           <Link className="surah" href={"/surahs"}>
