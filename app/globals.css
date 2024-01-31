@@ -63,3 +63,37 @@ html
   padding-bottom: 15px;
   border-radius: 50px;
 }
+
+.searchinp {
+  width: 75%;
+  overflow: hidden;
+  text-decoration: none;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+.searchinp::placeholder {
+  padding-left: 10px;
+}
+
+.butt-searchh {
+  overflow: hidden;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background-color:white;
+  color: black;
+  border-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+
+.searchdiv {
+  border-bottom: solid white;
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
