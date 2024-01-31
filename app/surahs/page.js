@@ -1,4 +1,4 @@
-'use client'
+
 import { Container , Row , Col } from "reactstrap"
 import NavBar from "../Components/NavBar"
 import Link from "next/link";
