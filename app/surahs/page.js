@@ -8,9 +8,7 @@ import Searchh from "../Components/surahSearch"
 
 export default async function surahs() {
   const response = await fetch("https://api.alquran.cloud/v1/quran",
-  { next: {
-    cache: 'no-store'
-}});
+);
   const dataa = await response.json();
   const surah = dataa.data.surahs
   return (
